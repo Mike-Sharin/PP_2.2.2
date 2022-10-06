@@ -23,7 +23,7 @@ public class CarServiceImpl implements CarService {
     }
 
     public List<Car> listCountCars(int count) {
-        if (count <= 0 ) {
+        if (count < 0 ) {
             return cars.stream().sorted(Comparator.comparing(Car::getId)).collect(Collectors.toList());
         } else {
             return cars.stream().sorted(Comparator.comparing(Car::getId)).limit(count).collect(Collectors.toList());
